@@ -1,46 +1,65 @@
-//  //Используя цикл вывести числа от 0 до 1000 в консоль.
-//  /*
-//  let i = 0;
-//  while(i++ < 1000) console.log(i);
-//  */
-//  /*
-//  Дан массив [“html”, “css”, “js”, “react”] . Напишите код, который принимает с помощью prompt() 
-//  любое значение и будет добавлять его в конец массива. 
-//  */
-//  let a=["html", "css", "js", "react"];
-//  a.push(prompt());
-//  //console.log(a);
-// //Используя цикл вывести все элементы предыдущего массива
-// for(let i=0; i < a.length; i++) {
-//     console.log(a[i]);
-// };
-// //Дан массив [10, 123, 13, 481, 1931]. Используя цикл вывести сумму элементов массива, т.е. 10+123+13… и т.д.
-// let c=[10, 123, 13, 481, 1931];
-// function sumArray(array) {
-//     let x = 0;
-     
-//     for(let i=0; i < array.length; i++) {
-//     x += array[i]; 
-//     }
-//     return x;
-// }
-// sumArray(c);
-// console.log(sumArray(c));
-//Дан массив [“frontend”, [“js”, “html”, “css”], “react”, [“node js”, “mysql”], “php”] - как вы видите некоторые элементы массива 
-//сами являются массивами: подумайте, как можно вывести элементы вложенного массива, к примеру “js”, “css”, “mysql”.
-let y=["frontend", ["js", "html", "css"], "react", ["node js", "mysql"], "php"];
-// console.log(y[1][0],y[1][2],y[3][1]);
-//Супер-сложное задание: используя цикл for вывести все элементы массива, при этом раскрывая вложенный массив и выводя его элементы.
- for(let i=0; i<y.length; i++) {
-     if(typeof y[i] === 'object'){
-         for(let j = 0; j < y[i].length; j++){
-             console.log(y[i][j])
-         }
-     } else {
-         console.log(y[i])
-     }
- };
+//Функция filterNegative() принимает массив с любыми числами и возвращает массив состоящий только из положительных.
+let arrNum = [123, -13, 0, 1474, 1, -312, -2];
+function filterNegative(numbers) {
+    let arr = [];
+    for( i=0; i < numbers.length; i++){  
+        if(numbers[i] >= 0) {
+            arr.push(numbers[i])
+        }
+    };
+    return arr;
+};
+filterNegative(arrNum);
+// console.log(filterNegative(arrNum)); // выводим функцию в консоль.
 
- 
+//Функция filterString() принимает массив с любыми типами элементов и возвращает массив состоящий только из строчных элементов.
+let NumStr = [123, "lorem", 0, 1474, "Ipsum", "Num", 10];
+function filterString(string){
+    let str= [];
+    for( i=0; i < string.length; i++){
+        if(typeof string[i] == "string"){
+            str.push(string[i]);
+        }
+    };
+    return str;
+}
+filterString(NumStr);
+//  console.log(filterString(NumStr)); // выводим функцию в консоль.
 
+
+//Функция filterLength() принимает два параметра: первый - массив с текстовыми элементами, второй - число.
+// Функция должна вернуть только те элементы длина строки которых не больше, чем второй параметр.
+let three=["js", "php", "react", "css"];
+function filterLength(str, num){
+    let arr=[];
+    for(i=0; i < str.length; i++){
+        if(str[i].length<=num){
+            arr.push(str[i]);
+        }   
+    };
+    return arr;
+};
+filterLength(three, 3);
+// console.log(filterLength(three, 3)); // выводим функцию в консоль.
+
+// 2 Создать функцию myMap(), которая принимает один параметр числовой массив и возвращает новый массив 
+// увеличивая элементы старого в два раза.
+let numMultiply=[12, 2, 3, 1, 10, 150];
+function myMap(num){
+    let arr=[];
+    for( i=0; i < num.length; i++){       
+        arr.push(num[i]*2);
+    };
+    return arr;
+};
+myMap(numMultiply);
+// console.log(myMap(numMultiply)); // выводим функцию в консоль.
+
+//3 Создать функцию reverseWords() которая принимает один параметр - строку. Функция должна вернуть строку в обратно порядке.
+function reverseWords(string){
+    arrString=string.split(" ");
+    return arrString.reverse();
+};
+reverseWords("yoda doesn't speak like this");
+// console.log(reverseWords("yoda doesn't speak like this")); // выводим функцию в консоль.
 
