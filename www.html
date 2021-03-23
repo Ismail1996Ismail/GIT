@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>интукод</title>
+    <style>
+        .red {
+            color: red;
+        }
+        .brown {
+            color: saddlebrown;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+        первый блок
+        <b>
+            жирный текст внутри первого блока
+        </b>
+        </div>
+        <div>
+        второй блок
+        <i>
+            курсивный текст внутри второго блока
+        </i>
+        <ul>
+            <li>Lorem.</li>
+            <li>Ex!</li>
+            <li>Animi.</li>
+            <li>Doloremque.</li>
+        </ul>
+        </div>
+    </div>
+    <script>
+        let city=[
+            {name:"Moscow", populations: 1000000},
+            {name:"Kiev", populations: 2000000},
+            {name:"London", populations: 3000000},
+            {name:"Jerusalim", populations: 4000000},
+            {name:"Kair", populations: 5000000},
+            {name:"York", populations: 6000000},
+        ];
+        function cityName(city){
+            return city.map(function (item){return item.name;});
+        };
+        function cityPopulations(city){
+            return city.map(function (item){
+                return item.populations;
+            });
+        };
+        let a=cityName(city);
+        let b=cityPopulations(city);
+        console.log(a);
+        console.log(b);
+        // Дан массив [-13, 0, 12, 1662, -0.32, -102, -2]. Посчитать сумму отрицательных элементов. (Нужно будет использовать filter и recuce)
+        let arr=[-13, 0, 12, 1662, -0.32, -102, -2];
+        let arrFilter=arr.filter(function(item){
+            return item < 0;
+        });
+        let arrReduce=arrFilter.reduce(function (sum,item){ return sum+item}, 0);
+        console.log(arrReduce);
+        //Да массив с объектами [ {x: 10, y: “lorem”}, {x: 21, y: “lorem”}, {x: -17, y: “lorem”}, {x: 156, y: “lorem”}]; 
+        //посчитать сумму свойств х всех объектов.
+        let arr2=[ {x: 10, y: "lorem"}, {x: 21, y: "lorem"}, {x: -17, y: "lorem"}, {x: 156, y: "lorem"}];
+        let arr3=arr2.reduce(function (sum,item){
+            return sum+item.x;
+        }, 0);
+        console.log(arr3);
+        // document.documentElement;
+        // document.body.firstElementChild.firstElementChild.firstElementChild;
+        // document.body.firstElementChild.firstElementChild.nextElementSibling.firstElementChild;
+        document.body.firstElementChild.firstElementChild.firstElementChild.className="red";
+        document.body.firstElementChild.firstElementChild.nextElementSibling.firstElementChild.className="brown";
+        document.head.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML="intocode";
+        document.body.firstElementChild.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.firstElementChild.innerHTML="html";
+        document.body.firstElementChild.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.innerHTML="css";
+        document.body.firstElementChild.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.nextElementSibling.innerHTML="git";
+        document.body.firstElementChild.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML="js"
+        console.dir();
+    </script>
+</body>
+</html>
